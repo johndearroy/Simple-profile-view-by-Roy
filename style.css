@@ -1,0 +1,368 @@
+/* Html5 and CSS3 Profile Card */
+* {margin: 0 auto; padding: 0 auto;}
+body{
+	margin: 0;
+	padding: 0;
+    font-family: sans-serif;
+	background: #000 url('https://serving.photos.photobox.com/19715958581eaad75083bb386e1bfbc1dc36cbd5dbbef117b7c4c5ad110675f6d9d57cc3.jpg') no-repeat center top;
+	background-size: 100vw 100vh;
+	overflow: hidden;
+}
+
+.overlay {
+    background: rgba(255, 177, 3, 0.25);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+.main {
+    background: #fff;
+    width: 280px;
+    height: 380px;
+    top: 50%;
+    left: 50%;
+    border-radius: 5px 50px;
+    position: absolute;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    box-shadow: 15px 18px 5px rgba(0,0,0,0.5);
+}
+.content {
+    background: #f57c00;
+    height: 140px;
+    border-bottom: 1px solid #0058b1;
+	color: #fff;
+}
+.content:after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border: 1px solid #f57c00;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    transform: translate(-50%,-50%) rotate(45deg);
+    margin-top: -49px;
+    border-top: 0;
+    border-left: 0;
+    background: #f57c00;
+}
+.content, .content:after {
+
+}
+.profile {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.profile-pic {
+    background: url('dear.jpg') no-repeat;
+    background-size: 5em 6em;
+    width: 5em;
+    height: 5em;
+    border-radius: 0px 50px 0px 50px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.2s ease-in all;
+    z-index: 999;
+}
+.profile:hover .profile-pic {
+    box-shadow: -10px 10px 5px rgba(0,0,0,0.5);
+}
+.profile:hover .social i {
+    display: block;
+}
+
+.top-section {
+    background-size: 100% 100%;
+    width: 165px;
+    height: 140px;
+    padding: 1em;
+    margin: 0;
+}
+
+.Name {
+    font-size: 1.5em;
+    font-weight: 600;
+    border-bottom: 2px solid red;
+    padding-bottom: 3px;
+    font-family: sans-sarif;
+}
+.info {
+    margin-top: 15px;
+    position: absolute;
+    font-size: 0.75em;
+}
+
+.social i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    transition: 1s ease-in all;
+    z-index: 1;
+    opacity: 0;
+    animation: social 0.3s linear; 
+}
+
+.social i:nth-child(1){
+    color: #fff; 
+    right: 95px; 
+    top: 15px; 
+    animation-delay: 0.1s; 
+    animation-fill-mode: forwards;
+}
+.social i:nth-child(2){
+    color: #fff; 
+    right: 93px; 
+    top: 50px; 
+    animation-delay: 0.2s; 
+    animation-fill-mode: forwards;
+}
+.social i:nth-child(3){
+    color: #fff; 
+    right: 65px; 
+    top: 79px; 
+    animation-delay: 0.4s; 
+    animation-fill-mode: forwards;
+}
+.social i:nth-child(4){
+    color: #fff; 
+    right: 25px; 
+    top: 89px; 
+    animation-delay: 0.5s; 
+    animation-fill-mode: forwards;
+}
+
+li {
+	margin-top: 15px;
+    width: 50%;
+    float: left;
+    list-style-type: none;
+}
+
+li:nth-child(1) { margin-left: -32px;}
+li:nth-child(2) { margin-left: 23px;}
+
+p.lebel {
+	font-size: 0.7em;
+	margin-bottom: 2px;
+	margin-top: 5px;
+}
+h2, h3 {
+    margin: 0 0 0.2em;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.8em;
+    padding: 0 0 .25em;
+}
+
+h3 {text-align: right; }
+
+
+progress:not(value) {
+    height: 10px !important;
+}
+
+
+progress[value] {
+    appearance: none;
+    border: none;
+    width: 100%;
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+    color: royalblue;
+    position: relative;
+    margin: 0.35em 0 1.5em; 
+	height: 10px !important;
+	box-shadow: 0px 6px 10px rgba(0,0,0,0.5);
+}
+
+
+progress[value]::-webkit-progress-bar {
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+}
+
+progress[value]::-webkit-progress-value {
+    position: relative;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    border-radius:3px;
+    animation: animate-stripes 5s linear infinite;
+}
+
+@keyframes animate-stripes { 100% { background-position: -100px 0; } }
+
+
+progress[value]::-webkit-progress-value:after {
+    content: '';
+    position: absolute;
+    width:5px; height:5px;
+    top:7px; right:7px;
+    background-color: white;
+    border-radius: 100%;
+}
+
+
+progress[value]::-moz-progress-bar {
+    background-image:
+    -moz-linear-gradient( 135deg,
+                                transparent,
+                                transparent 33%,
+                                rgba(0,0,0,.1) 33%,
+                                rgba(0,0,0,.1) 66%,
+                                transparent 66%),
+    -moz-linear-gradient( top,
+                             rgba(255, 255, 255, .25),
+                             rgba(0,0,0,.2)),
+     -moz-linear-gradient( left, #09c, #f44);
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    border-radius:3px;
+}
+
+.progress-bar {
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+    width: 100%; height:20px;
+}
+
+.progress-bar span {
+    background-color: royalblue;
+    border-radius: 3px;
+    display: block;
+    text-indent: -9999px;
+}
+
+p[data-value] { 
+  position: relative; 
+}
+
+p[data-value]:after {
+    content: attr(data-value) '%';
+    position: absolute; right:0;
+}
+
+.html5::-webkit-progress-value,
+.python::-webkit-progress-value  {
+    background-image:
+    -webkit-linear-gradient( 135deg,
+                                    transparent,
+                                    transparent 33%,
+                                    rgba(0,0,0,.1) 33%,
+                                    rgba(0,0,0,.1) 66%,
+                                    transparent 66%),
+    -webkit-linear-gradient( top,
+                                rgba(255, 255, 255, .25),
+                                rgba(0,0,0,.2)),
+     -webkit-linear-gradient( left, #09c, #f44);
+}
+
+.css3::-webkit-progress-value,
+.php::-webkit-progress-value 
+{
+    /* Gradient background with Stripes */
+    background-image:
+    -webkit-linear-gradient( 135deg,
+                                                     transparent,
+                                                     transparent 33%,
+                                                     rgba(0,0,0,.1) 33%,
+                                                     rgba(0,0,0,.1) 66%,
+                                                     transparent 66%),
+    -webkit-linear-gradient( top,
+                                                        rgba(255, 255, 255, .25),
+                                                        rgba(0,0,0,.2)),
+     -webkit-linear-gradient( left, #09c, #ff0);
+}
+
+.jquery::-webkit-progress-value,
+.node-js::-webkit-progress-value 
+{
+    /* Gradient background with Stripes */
+    background-image:
+    -webkit-linear-gradient( 135deg,
+                                                     transparent,
+                                                     transparent 33%,
+                                                     rgba(0,0,0,.1) 33%,
+                                                     rgba(0,0,0,.1) 66%,
+                                                     transparent 66%),
+    -webkit-linear-gradient( top,
+                                                        rgba(255, 255, 255, .25),
+                                                        rgba(0,0,0,.2)),
+     -webkit-linear-gradient( left, #09c, #690);
+}
+
+/* Similarly, for Mozillaa. Unfortunately combining the styles for different browsers will break every other browser. Hence, we need a separate block. */
+
+.html5::-moz-progress-bar,
+.php::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-image:
+    -moz-linear-gradient( 135deg,
+                                                     transparent,
+                                                     transparent 33%,
+                                                     rgba(0,0,0,.1) 33%,
+                                                     rgba(0,0,0,.1) 66%,
+                                                     transparent 66%),
+    -moz-linear-gradient( top,
+                                                        rgba(255, 255, 255, .25),
+                                                        rgba(0,0,0,.2)),
+     -moz-linear-gradient( left, #09c, #f44);
+}
+
+.css3::-moz-progress-bar,
+.php::-moz-progress-bar {
+{
+    /* Gradient background with Stripes */
+    background-image:
+    -moz-linear-gradient( 135deg,
+                                                     transparent,
+                                                     transparent 33%,
+                                                     rgba(0,0,0,.1) 33%,
+                                                     rgba(0,0,0,.1) 66%,
+                                                     transparent 66%),
+    -moz-linear-gradient( top,
+                                                        rgba(255, 255, 255, .25),
+                                                        rgba(0,0,0,.2)),
+     -moz-linear-gradient( left, #09c, #ff0);
+}
+
+.jquery::-moz-progress-bar,
+.node-js::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-image:
+    -moz-linear-gradient( 135deg,
+                                                     transparent,
+                                                     transparent 33%,
+                                                     rgba(0,0,0,.1) 33%,
+                                                     rgba(0,0,0,.1) 66%,
+                                                     transparent 66%),
+    -moz-linear-gradient( top,
+                                                        rgba(255, 255, 255, .25),
+                                                        rgba(0,0,0,.2)),
+     -moz-linear-gradient( left, #09c, #690);
+}
+
+
+/*  Animations  */
+@keyframes social {
+    0%{
+        right: 0px; top: 0px;
+        opacity: 0;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        font-size: 1.2em;
+    }
+}
